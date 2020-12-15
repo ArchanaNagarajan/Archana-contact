@@ -29,12 +29,11 @@ public class Delete extends HttpServlet {
 					}
 					
 				 String name = request.getParameter("name");
+				 String number=request.getParameter("number");
 				 
-				HttpSession session = request.getSession();
-				
-				//session.getAttribute(name);
-				session.setAttribute(name, "name");
-				 cName=session.getClass().getName();   
+				 ViewAll.getNumber(number);
+				 ViewAll.getName(name);
+				  out.print("The contact is deleted");
 				  
 	}
 
