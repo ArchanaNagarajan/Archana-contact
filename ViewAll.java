@@ -19,21 +19,29 @@ import javax.servlet.http.HttpSession;
 public class ViewAll extends HttpServlet {
 	
 	public static TreeMap<String,String> contact = new TreeMap<>();
-	public static String name;
-	public static String number;
+	public static String key;
+	public static String value;
 	public static void Display() {
 		contact.put("9823124090", "Arav");
 		contact.put("8122909340", "Kalai");
   	    contact.put("7358682689","Janani");
    	    contact.put("9444722270", "Nagarajan");
   	    contact.put("9054678321", "Deepiha");
+	
+		if(contact.containsKey(key)&&(contact.containsValue(value))) {
+			 
+			 contact.remove(key, value);
+		 }
 	}
-	 public boolean checkKey(String key) {
-		    if (contact.containsKey(key)) {
-		    	return true;
-		    }
-		    return false;
-		  }
+	public static void getNumber(String number) {
+		
+		      key=number;
+	}
+	public static void getName(String name) {
+		
+	      value=name;
+	}
+	
 	
 	public static void Post(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
